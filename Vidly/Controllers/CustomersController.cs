@@ -10,12 +10,6 @@ namespace Vidly.Controllers
     {
         private ApplicationDbContext _context;
 
-        public List<Customer> Customers = new List<Customer>
-        {
-            new Customer { Id = 1, Name = "John" },
-            new Customer { Id = 2, Name = "Kate" }
-        };
-
         public CustomersController()
         {
             _context = new ApplicationDbContext();
@@ -26,7 +20,6 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
-        // GET: Customers
         public ActionResult Index()
         {
             var customers = _context.Customers.Include(c => c.MembershipType).ToList();
