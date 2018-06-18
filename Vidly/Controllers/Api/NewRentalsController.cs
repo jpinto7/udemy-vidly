@@ -9,11 +9,11 @@ using Vidly.Models;
 
 namespace Vidly.Controllers.Api
 {
-    public class RentalsController : ApiController
+    public class NewRentalsController : ApiController
     {
         private readonly ApplicationDbContext _context;
 
-        public RentalsController()
+        public NewRentalsController()
         {
             _context = new ApplicationDbContext();
         }
